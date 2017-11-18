@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
+import {Router, ActivatedRoute, Params} from '@angular/router';
 
 import { SmartTableService } from '../../../@core/data/smart-table.service';
+import { MockData } from '../../../model/MockData'; 
 
 @Component({
   selector: 'ngx-smart-table',
@@ -12,7 +14,7 @@ import { SmartTableService } from '../../../@core/data/smart-table.service';
     }
   `],
 })
-export class SmartTableComponent {
+export class SmartTableComponent implements OnInit {
 
   settings = {
     add: {
@@ -29,39 +31,49 @@ export class SmartTableComponent {
       deleteButtonContent: '<i class="nb-trash"></i>',
       confirmDelete: true,
     },
-    columns: {
-      id: {
-        title: 'ID',
-        type: 'number',
-      },
-      firstName: {
+    columns: { 
+      name: {
         title: 'First Name',
         type: 'string',
       },
-      lastName: {
+      lastname: {
         title: 'Last Name',
         type: 'string',
       },
-      username: {
+      groupName: {
         title: 'Username',
         type: 'string',
-      },
-      email: {
-        title: 'E-mail',
-        type: 'string',
-      },
-      age: {
-        title: 'Age',
-        type: 'number',
-      },
+      }
     },
   };
 
   source: LocalDataSource = new LocalDataSource();
+  groupName: string = "";
+  searchstring: string="";
+  mock = new MockData();
 
-  constructor(private service: SmartTableService) {
-    const data = this.service.getData();
-    this.source.load(data);
+  constructor(
+    private service: SmartTableService,
+    private activatedRoute: ActivatedRoute) 
+    {
+      const data = this.service.getData();
+      
+      //this.source.load(data);      
+      this.source.load(this.mock.kidsMock);
+      
+    }
+  
+  ngOnInit() {
+      this.activatedRoute.params.subscribe((params: Params) => {
+          this.groupName =  decodeURI(params['name']);
+          this.searchstring =  decodeURI(params['searchstring']);
+          if(this.groupName){
+            this.source.load(this.mock.kidsMock.filter(kid=>kid.groupName === this.groupName));
+          }else{
+          }
+
+
+        });
   }
 
   onDeleteConfirm(event): void {

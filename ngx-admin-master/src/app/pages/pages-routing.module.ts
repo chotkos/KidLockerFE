@@ -38,7 +38,8 @@ const routes: Routes = [{
     pathMatch: 'full',
   },
   { path: 'group', component: SmartTableComponent },
-  { path: 'group/:name', component: SmartTableComponent }
+  { path: 'group/:name', component: SmartTableComponent },
+  { path: 'group/:searchstring', component: SmartTableComponent }
 ],
 }];
 

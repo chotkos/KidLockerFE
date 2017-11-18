@@ -1,1 +1,28 @@
-<h1>HEHEHEH</h1>
+<div class="row">
+
+    <!-- <div class="col-xxxl-3 col-xxl-4 col-lg-7 col-md-6">
+        <ngx-contacts></ngx-contacts>
+    </div>
+
+    <div class="col-xxxl-3 col-xxl-4 col-lg-5 col-md-6">
+
+        <ngx-kitten></ngx-kitten>
+    </div> -->
+    <div class="col-xxxl-6 col-xxl-5 col-lg-4 col-md-6">
+        <nb-card [size]="large">
+        </nb-card>
+    </div>
+    <div class="col-xxxl-6 col-xxl-7 col-lg-8 col-md-6">
+        <nb-card [size]="xlarge">
+            <nb-tabset fullWidth>
+                <nb-tab tabTitle="Contacts">
+                    <div class="contact">
+                        <nb-user [name]="ABC" [title]="ABC" size="large"></nb-user>
+                        <i class="i-contact nb-phone"></i>
+                    </div>
+                </nb-tab>
+            </nb-tabset>
+        </nb-card>
+    </div>
+
+</div>

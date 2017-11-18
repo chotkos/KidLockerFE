@@ -15,14 +15,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { ThemeModule } from './@theme/theme.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+
+import {TablesModule} from './pages/tables/tables.module';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpModule,
-    AppRoutingModule,
-
+    AppRoutingModule, 
     NgbModule.forRoot(),
     ThemeModule.forRoot(),
     CoreModule.forRoot(),

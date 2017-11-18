@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {SmartTableComponent} from './tables/smart-table/smart-table.component';
 
 const routes: Routes = [{
   path: '',
@@ -35,7 +36,10 @@ const routes: Routes = [{
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',
-  }],
+  },
+  { path: 'group', component: SmartTableComponent },
+  { path: 'group/:name', component: SmartTableComponent }
+],
 }];
 
 @NgModule({

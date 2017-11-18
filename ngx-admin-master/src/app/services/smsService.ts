@@ -2,9 +2,10 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
-export default class SMSService {
+export class SMSService {
 
     url:string = 'http://52.210.40.66:5000/sendsms';
+
     constructor(private http: HttpClient){
             
     }
@@ -26,7 +27,7 @@ export default class SMSService {
             );
     }
 
-    sendNotificationCode(phoneNumber:string, personName:string){
+    sendNotificationToParents(phoneNumber:string, personName:string){
         
                 const req = this.http.post(this.url, {
                     name: personName,

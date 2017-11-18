@@ -6,8 +6,8 @@ import { TreeComponent } from './tree/tree.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 
 const routes: Routes = [{
-  path: '',
-  component: ComponentsComponent,
+  path: 'tree',
+  component: TreeComponent,
   children: [
   {
     path: 'tree',

@@ -2,9 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'ngx-components',
-  template: `
-    <router-outlet></router-outlet>
-  `,
+  templateUrl: "./components.component.html"
 })
 export class ComponentsComponent {
 }

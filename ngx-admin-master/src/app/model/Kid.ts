@@ -7,19 +7,16 @@ export class Kid {
     keepers: Array<Adult>;
     id:number;
 
-    constructor(name:string, lastname: string, groupName: string,  photoUrl:string, parents:Array<Adult>, keepers:Array<Adult>){
+    constructor(name:string, lastname: string, groupName: string,  photoUrl:string, parents:Array<Adult>, keepers:Array<Adult>, id:number){
         this.name = name;
         this.lastname = lastname;
         this.groupName = groupName;
         this.photoUrl = photoUrl;
         this.parents = parents;
         this.keepers = keepers;
-        this.id= this.GetNewId();
+        this.id= id;
     }
 
-    GetNewId() {
-        return Math.floor(Math.random() * (10000000 - 1 + 1)) + 1;
-    }
  
 }
 

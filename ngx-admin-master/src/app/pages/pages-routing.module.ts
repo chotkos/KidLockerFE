@@ -39,7 +39,7 @@ const routes: Routes = [{
   },
   { path: 'group', component: SmartTableComponent },
   { path: 'group/:name', component: SmartTableComponent },
-  { path: 'group/:searchstring', component: SmartTableComponent }
+  { path: 'group/search/:searchstring', component: SmartTableComponent }
 ],
 }];
 

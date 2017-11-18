@@ -67,9 +67,11 @@ export class SmartTableComponent implements OnInit {
       this.activatedRoute.params.subscribe((params: Params) => {
           this.groupName =  decodeURI(params['name']);
           this.searchstring =  decodeURI(params['searchstring']);
-          if(this.groupName){
-            this.source.load(this.mock.kidsMock.filter(kid=>kid.groupName === this.groupName));
-          }else{
+          if(this.groupName && this.groupName!="undefined"){
+            this.source.load(this.mock.kidsMock.filter(kid=>kid.groupName.toLowerCase() === this.groupName.toLowerCase()));
+          }else if(this.searchstring && this.searchstring!="undefined"){
+            this.source.load(this.mock.kidsMock.filter(kid=>(kid.name+' '+kid.lastname+' '+kid.name).toLowerCase().indexOf(this.searchstring.toLowerCase())>-1));
+            this.groupName = "Wyniki wyszukiwania dla frazy: '"+this.searchstring+"'";
           }
 
 

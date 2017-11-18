@@ -32,9 +32,26 @@
 .parent-contact, .keeper-contact {
     margin: 20px;
 }
+.between-line {
+    border-top: 3px double;
+    padding-top: 10px;
+    border-color: #40dc7e;
+}
 .nb-user {
     display: inline-block;
 }
 .contact-details {
     float: right;
+    margin: 10px;
+}
+.icon-class {
+    font-size: 28px;
+    color: #40dc7e;
+    font-weight: bold;
+    top: 8px;
+    position: relative;
+}
+.phone-number {
+    margin-right: 20px;
+    font-weight: bold;
 }

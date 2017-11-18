@@ -87,6 +87,6 @@ export class SmartTableComponent implements OnInit {
     }
   }
   onRowSelect(event): void {
-    
+    window.location.href = '/#/pages/kid/' + event.data.id;
   }
 }

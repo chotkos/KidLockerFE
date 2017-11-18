@@ -4,7 +4,8 @@ import {Router, ActivatedRoute, Params} from '@angular/router';
 
 @Component({
   selector: 'ngx-components',
-  templateUrl: "./components.component.html"
+  templateUrl: "./components.component.html",
+  styleUrls: ["./components.component.css"]
 })
 
 export class ComponentsComponent implements OnInit {
@@ -17,8 +18,12 @@ export class ComponentsComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: Params) => { 
-      this.kid = this.mock.kidsMock.filter(kid => kid.id + '' === params['id']);
-      debugger;
+      this.kid = this.mock.kidsMock.filter(kid => kid.id + '' === params['id'])[0];
+
+      this.kid.photoUrl = 'url(' + 'assets/images/' + this.kid.photoUrl + ')';
+
+
+      console.log(this.kid);
     });
   }
 

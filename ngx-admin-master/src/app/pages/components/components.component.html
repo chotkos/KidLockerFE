@@ -1,24 +1,33 @@
 <div class="row">
-
-    <!-- <div class="col-xxxl-3 col-xxl-4 col-lg-7 col-md-6">
-        <ngx-contacts></ngx-contacts>
-    </div>
-
-    <div class="col-xxxl-3 col-xxl-4 col-lg-5 col-md-6">
-
-        <ngx-kitten></ngx-kitten>
-    </div> -->
     <div class="col-xxxl-6 col-xxl-5 col-lg-4 col-md-6">
         <nb-card [size]="large">
+            <nb-card-body class="nb-card-body">
+                <div class="picture kid-photo" [style.backgroundImage]="kid.photoUrl"></div>
+
+                <div class="details">
+                    <div class="title">
+                        {{kid.name}} {{kid.lastname}}
+                    </div>
+                </div>
+            </nb-card-body>
+            <nb-card-footer>
+                {{kid.groupName}}
+            </nb-card-footer>
         </nb-card>
     </div>
     <div class="col-xxxl-6 col-xxl-7 col-lg-8 col-md-6">
         <nb-card [size]="xlarge">
             <nb-tabset fullWidth>
                 <nb-tab tabTitle="Contacts">
-                    <div class="contact">
-                        <nb-user [name]="ABC" [title]="ABC" size="large"></nb-user>
-                        <i class="i-contact nb-phone"></i>
+                    <div class="contact" *ngFor="let c of kid.parents">
+                        <nb-user [name]="c.name+' '+c.lastname" [picture]="'assets/images/'+c.photoUrl" size="large"></nb-user>
+                        <i class="i-contact nb-phone">{{c.phoneNumber}}</i>
+                        <button>Wyślij SMS</button>
+                    </div>
+                    <div class="contact" *ngFor="let c of kid.keepers">
+                        <nb-user [name]="c.name+' '+c.lastname" [picture]="c.photoUrl" size="large"></nb-user>
+                        <i class="i-contact nb-phone">{{c.phoneNumber}}</i>
+                        <button>Wyślij SMS</button>
                     </div>
                 </nb-tab>
             </nb-tabset>

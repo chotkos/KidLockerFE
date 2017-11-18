@@ -1,6 +1,6 @@
 import {Kid, Adult} from './Kid';
 
-export default class MockData{
+export class MockData{
     
     parentsMock:Array<Array<Adult>> = [
         [
@@ -65,14 +65,12 @@ export default class MockData{
         }
     }
 
-    
-
-
-
-
     GetKidsMock():Array<Kid> {
         return this.kidsMock;
     }
  
+    GetGroupsMock():Array<string> {
+        return this.groupsMock;
+    }
 
 }

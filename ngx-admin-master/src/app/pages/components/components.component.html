@@ -24,7 +24,7 @@
                         <div class="contact-details">
                             <i class="i-contact nb-phone icon-class"></i>
                             <span class="phone-number">{{c.phoneNumber}}</span>
-                            <button class="btn" (click)="sendSms(c.phoneNumber, c.name+''+c.lastname)">Wyślij SMS</button>
+                            <button class="btn" (click)="sendSms(c.phoneNumber, c.name+' '+c.lastname)">Wyślij SMS</button>
                         </div>
                     </div>
                 </nb-tab>
@@ -37,7 +37,7 @@
                         <div class="contact-details">
                             <i class="i-contact nb-phone icon-class"></i>
                             <span class="phone-number">{{c.phoneNumber}}</span>
-                            <button (click)="sendSms(c.phoneNumber, c.name+''+c.lastname)">Wyślij SMS</button>
+                            <button (click)="sendSms(c.phoneNumber, c.name+' '+c.lastname)">Wyślij SMS</button>
                         </div>
                     </div>
                 </nb-tab>

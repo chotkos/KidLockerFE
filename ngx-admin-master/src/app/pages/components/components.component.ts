@@ -5,6 +5,10 @@ import {SMSService} from '../../services/smsService'
 
 import { HttpClient } from '@angular/common/http';
 import { Adult } from '../../model/Kid';
+
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { ModalComponent } from './../ui-features/modals/modal/modal.component';
+
 @Component({
   selector: 'ngx-components',
   templateUrl: "./components.component.html",
@@ -17,7 +21,7 @@ export class ComponentsComponent implements OnInit {
   kid = null;
   code="000000";
   smsService:SMSService;
-  constructor(private activatedRoute: ActivatedRoute, http: HttpClient) {
+  constructor(private activatedRoute: ActivatedRoute, http: HttpClient, private modalService: NgbModal) {
     this.smsService = new SMSService(http);
   }
 
@@ -35,8 +39,10 @@ export class ComponentsComponent implements OnInit {
   sendSms(phoneNumber:string, personName:string){
     this.code = this.generateNumber()+''; 
     console.log(this.code);
-    this.smsService.sendVerificationCode(phoneNumber,this.code)
+    this.showLargeModal();
 
+    //TODO odkomentować gdy smsy będą się miały wysyłać.
+    this.smsService.sendVerificationCode(phoneNumber,this.code)    
     for(let i =0;i<this.kid.parents.length;i++){
       this.smsService.sendNotificationToParents(this.kid.parents[i].phoneNumber, personName);
     }
@@ -46,6 +52,19 @@ export class ComponentsComponent implements OnInit {
     return Math.floor(Math.random() * (999999 - 111111 + 1)) + 111111;
   }
  
+  showLargeModal() {
+    /*const activeModal = this.modalService.open(ModalComponent, { size: 'lg', container: 'nb-layout' });*/
 
+    let modal: NgbModalRef = this.modalService.open(ModalComponent, { size: 'lg' });
+    
+        (<ModalComponent>modal.componentInstance).modalHeader = this.code;
+    
+        modal.result.then((result) => {
+          console.log(result);
+        }, (reason) => {
+          console.log(reason);
+        }); 
+ 
+  }
 
 }

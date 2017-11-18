@@ -26,7 +26,6 @@ export class HeaderComponent implements OnInit {
               private router: Router,
               private searchService: NbSearchService
             ) {
-              
               this.searchService.onSearchSubmit().subscribe(function(e){ 
                 //this.router.navigate(['/pages/search'], { queryParams: { searchstring: e.term } });
                 window.location.href = '/#/pages/group/search/'+e.term;
@@ -35,6 +34,9 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+    setTimeout(function(){
+      $('.nb-search').css('color', '#3dcc6d')
+    }, 500);
     this.userService.getUsers()
       .subscribe((users: any) => this.user = users.nick);
   }

@@ -9,12 +9,7 @@ import {Group} from "../../model/Group";
 })
 export class DashboardComponent implements OnInit {
   groups: Array<string> = new MockData().GetGroupsMock();
-  imageUrl: Array<string> = ["assets/images/alan.png",
-    "assets/images/alan.png",
-    "assets/images/alan.png",
-    "assets/images/alan.png",
-    "assets/images/alan.png",
-    "assets/images/alan.png"];
+  imageUrl: Array<string> = new MockData().GetGroupsImageUrls();
   groupsObject: Array<Group> = [];
   ngOnInit(): void {
 
@@ -23,7 +18,8 @@ export class DashboardComponent implements OnInit {
     },500);
 
     for (let i = 0 ; i < this.groups.length; i++) {
-      this.groupsObject.push(new Group(this.groups[i], this.imageUrl[i]))
+      this.groupsObject.push(new Group(this.groups[i], 'url(' + 'assets/images/' + this.imageUrl[i] + ')'))
     }
+
   }
 }

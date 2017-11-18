@@ -1,7 +1,7 @@
 import {Kid, Adult} from './Kid';
 
 export class MockData{
-    
+
     parentsMock:Array<Array<Adult>> = [
         [
             new Adult("Jan","Okraska", "adult1.jpg", "+48690333939"),
@@ -11,30 +11,39 @@ export class MockData{
         ],
         [
             new Adult("Mateusz","Chodkowski", "adult3.jpg", "+48514899374"),
-            new Adult("Marta","Kołbuk", "adult4.jpg", "+48514280410"), 
+            new Adult("Marta","Kołbuk", "adult4.jpg", "+48514280410"),
         ]
     ];
-    
+
     keepersMock:Array<Array<Adult>> = [
         [
             new Adult("Jan","Okraska", "adult1.jpg", "+48690333939"),
-            new Adult("Rafał","Margas", "adult2.jpg", "+48696479436"),            
+            new Adult("Rafał","Margas", "adult2.jpg", "+48696479436"),
         ],[
             new Adult("Mateusz","Chodkowski", "adult3.jpg", "+48514899374"),
         ],[
-            new Adult("Marta","Kołbuk", "adult4.jpg", "+48514280410"), 
-            new Adult("Mateusz","Chodkowski", "adult3.jpg", "+48514899374"),            
+            new Adult("Marta","Kołbuk", "adult4.jpg", "+48514280410"),
+            new Adult("Mateusz","Chodkowski", "adult3.jpg", "+48514899374"),
         ],[
-            new Adult("Rafał","Margas", "adult2.jpg", "+48696479436"),            
+            new Adult("Rafał","Margas", "adult2.jpg", "+48696479436"),
         ],[
-            new Adult("Jan","Okraska", "adult1.jpg", "+48690333939"),            
+            new Adult("Jan","Okraska", "adult1.jpg", "+48690333939"),
         ]
     ];
 
     groupsMock:Array<string> = [
         "Pszczółki", "Misie", "Żabki", "Zajączki", "Bociany", "Myszki"
-    ]
-    
+    ];
+
+    groupImageUrl: Array<string> = [
+      "alan.png",
+      "alan.png",
+      "alan.png",
+      "alan.png",
+      "alan.png",
+      "alan.png"
+    ];
+
 
     kidsMock:Array<Kid> = [];
 
@@ -69,9 +78,12 @@ export class MockData{
     GetKidsMock():Array<Kid> {
         return this.kidsMock;
     }
- 
+
     GetGroupsMock():Array<string> {
         return this.groupsMock;
     }
 
+    GetGroupsImageUrls():Array<string> {
+      return this.groupImageUrl;
+    }
 }

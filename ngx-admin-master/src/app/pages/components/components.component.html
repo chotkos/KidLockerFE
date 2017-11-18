@@ -30,7 +30,7 @@
                         <nb-user [name]="c.name+' '+c.lastname" [picture]="c.photoUrl" size="large"></nb-user>
                         <div>
                             <i class="i-contact nb-phone">{{c.phoneNumber}}</i>
-                            <button (click)="sendSms(c.phoneNumber, c.name+''+c.lastname)">Wyślij SMS</button>
+                            <button (click)="sendSms(c.phoneNumber, c.name+' '+c.lastname)">Wyślij SMS</button>
                         </div>
                     </div>
                 </nb-tab>

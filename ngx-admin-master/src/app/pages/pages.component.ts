@@ -31,7 +31,7 @@ export class PagesComponent {
   initMenuItems(){ 
     var allmenu = {
         title: 'Grupy',
-        icon: 'nb-keypad',
+        icon: 'nb-list',
         link: '/pages/group',
         children: []
     }

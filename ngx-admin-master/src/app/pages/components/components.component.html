@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-xxxl-6 col-xxl-5 col-lg-4 col-md-6">
+    <div class="col-xxxl-5 col-xxl-4 col-lg-4 col-md-6">
         <nb-card [size]="large">
             <nb-card-body class="nb-card-body">
                 <div class="picture kid-photo" [style.backgroundImage]="kid.photoUrl"></div>
@@ -10,24 +10,41 @@
                     </div>
                 </div>
             </nb-card-body>
-            <nb-card-footer>
+            <nb-card-footer class="nb-card-footer">
                 {{kid.groupName}}
             </nb-card-footer>
         </nb-card>
     </div>
-    <div class="col-xxxl-6 col-xxl-7 col-lg-8 col-md-6">
+    <div class="col-xxxl-7 col-xxl-8 col-lg-8 col-md-6">
         <nb-card [size]="xlarge">
-            <nb-tabset fullWidth>
-                <nb-tab tabTitle="Contacts">
-                    <div class="contact" *ngFor="let c of kid.parents">
-                        <nb-user [name]="c.name+' '+c.lastname" [picture]="'assets/images/'+c.photoUrl" size="large"></nb-user>
-                        <i class="i-contact nb-phone">{{c.phoneNumber}}</i>
-                        <button>Wyślij SMS</button>
+            <nb-tabset fullWidth class="nb-tabset">
+                <nb-tab tabTitle="Rodzice" class="tab-title">
+                    <div class="contact parent-contact" *ngFor="let c of kid.parents">
+                        <nb-user class="nb-user" [name]="c.name+' '+c.lastname" [picture]="'assets/images/'+c.photoUrl" size="large"></nb-user>
+                        <div class="contact-details">
+                            <i class="i-contact nb-phone icon-class"></i>
+                            <span class="phone-number">{{c.phoneNumber}}</span>
+                            <button class="btn btn-hero-success" (click)="sendSms(c.phoneNumber, c.name+' '+c.lastname)">
+                                <i class="nb-email icon-mail"></i>
+                                Wyślij SMS
+                            </button>
+                        </div>
                     </div>
-                    <div class="contact" *ngFor="let c of kid.keepers">
-                        <nb-user [name]="c.name+' '+c.lastname" [picture]="c.photoUrl" size="large"></nb-user>
-                        <i class="i-contact nb-phone">{{c.phoneNumber}}</i>
-                        <button>Wyślij SMS</button>
+                </nb-tab>
+            </nb-tabset>
+            
+            <nb-tabset fullWidth class="nb-tabset">
+                    <nb-tab tabTitle="Opiekunowie" class="tab-title">
+                    <div class="contact keeper-contact" *ngFor="let c of kid.keepers">
+                        <nb-user class="nb-user" [name]="c.name+' '+c.lastname" [picture]="c.photoUrl" size="large"></nb-user>
+                        <div class="contact-details">
+                            <i class="i-contact nb-phone icon-class"></i>
+                            <span class="phone-number">{{c.phoneNumber}}</span>
+                            <button class="btn btn-hero-success" (click)="sendSms(c.phoneNumber, c.name+' '+c.lastname)">
+                                    <i class="nb-email icon-mail"></i>
+                                    Wyślij SMS
+                            </button>
+                        </div>
                     </div>
                 </nb-tab>
             </nb-tabset>

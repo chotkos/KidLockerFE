@@ -4,6 +4,7 @@ import {Router, ActivatedRoute, Params} from '@angular/router';
 
 import { SmartTableService } from '../../../@core/data/smart-table.service';
 import { MockData } from '../../../model/MockData'; 
+import * as $ from 'jquery';
 
 @Component({
   selector: 'ngx-smart-table',
@@ -33,15 +34,15 @@ export class SmartTableComponent implements OnInit {
     },
     columns: { 
       name: {
-        title: 'First Name',
+        title: 'Imię',
         type: 'string',
       },
       lastname: {
-        title: 'Last Name',
+        title: 'Nazwisko',
         type: 'string',
       },
       groupName: {
-        title: 'Username',
+        title: 'Grupa',
         type: 'string',
       }
     },
@@ -65,6 +66,9 @@ export class SmartTableComponent implements OnInit {
     }
   
   ngOnInit() {
+
+    
+
       this.activatedRoute.params.subscribe((params: Params) => {
           this.groupName =  decodeURI(params['name']);
           this.searchstring =  decodeURI(params['searchstring']);
@@ -74,7 +78,7 @@ export class SmartTableComponent implements OnInit {
             this.source.load(this.mock.kidsMock.filter(kid=>(kid.name+' '+kid.lastname+' '+kid.name).toLowerCase().indexOf(this.searchstring.toLowerCase())>-1));
             this.groupName = "Wyniki wyszukiwania dla frazy: '"+this.searchstring+"'";
           }
-
+          $('div.ng2-smart-title').first().html('Akcje');
 
         });
   }

@@ -54,7 +54,8 @@ export class SmartTableComponent implements OnInit {
 
   constructor(
     private service: SmartTableService,
-    private activatedRoute: ActivatedRoute) 
+    private activatedRoute: ActivatedRoute,
+    private router: Router) 
     {
       const data = this.service.getData();
       
@@ -82,5 +83,8 @@ export class SmartTableComponent implements OnInit {
     } else {
       event.confirm.reject();
     }
+  }
+  onRowSelect(event): void {
+    
   }
 }

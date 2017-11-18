@@ -5,6 +5,7 @@ export class Kid {
     photoUrl: string; 
     parents : Array<Adult>;
     keepers: Array<Adult>;
+    id:number;
 
     constructor(name:string, lastname: string, groupName: string,  photoUrl:string, parents:Array<Adult>, keepers:Array<Adult>){
         this.name = name;
@@ -13,7 +14,13 @@ export class Kid {
         this.photoUrl = photoUrl;
         this.parents = parents;
         this.keepers = keepers;
+        this.id= this.GetNewId();
     }
+
+    GetNewId() {
+        return Math.floor(Math.random() * (10000000 - 1 + 1)) + 1;
+    }
+ 
 }
 
 export class Adult {
@@ -28,4 +35,5 @@ export class Adult {
         this.photoUrl = photoUrl;
         this.phoneNumber = phoneNumber;
     }
+
 }

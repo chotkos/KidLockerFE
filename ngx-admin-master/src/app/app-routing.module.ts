@@ -48,7 +48,7 @@ const routes: Routes = [
 
 const config: ExtraOptions = {
   useHash: true,
-};
+};  
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, config)],

@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { Component,NgModule } from '@angular/core';
+import { RouterModule, Routes, Router } from '@angular/router'; 
+
 
 import { MENU_ITEMS } from './pages-menu';
-import { MockData } from './../model/MockData';
+import { MockData } from './../model/MockData'; 
+
 
 @Component({
   selector: 'ngx-pages',
@@ -18,24 +21,34 @@ export class PagesComponent {
   md:MockData = new MockData();
   //menu = MENU_ITEMS;
   menu:any = [];
-  constructor(){
+ 
+
+  constructor(private router: Router){
     this.initMenuItems();
   }
 
-  initMenuItems(){
-    var elements = [];
-    
+
+  initMenuItems(){ 
+    var allmenu = {
+        title: 'Grupy',
+        icon: 'nb-keypad',
+        link: '/pages/group',
+        children: []
+    }
+
+
         for(var i=0;i<this.md.groupsMock.length;i++){
     
           var newsection =  {
             title: this.md.groupsMock[i],
-            icon: 'nb-keypad',
-            link: '/groups?name='+ this.md.groupsMock[i]
+            link: '/pages/group/' + this.md.groupsMock[i],
+            
           }
     
-          elements.push(newsection);  
+          allmenu.children.push(newsection);  
         }
-        this.menu = elements;
+ 
+        this.menu = [allmenu];
   }
 
 }

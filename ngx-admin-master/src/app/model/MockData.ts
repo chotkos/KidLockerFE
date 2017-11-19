@@ -34,7 +34,7 @@ export class MockData{
     groupsMock:Array<string> = [
         "Pszczółki", "Misie", "Żabki", "Zajączki", "Bociany", "Myszki"
     ];
-
+    //TODO: Map group images
     groupImageUrl: Array<string> = [
       "alan.png",
       "alan.png",

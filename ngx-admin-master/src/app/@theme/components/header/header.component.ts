@@ -35,7 +35,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     setTimeout(function(){
-      $('.nb-search').css('color', '#3dcc6d')
+      $('.nb-search').css('color', '#3dcc6d').css('font-weight', 'bold')
     }, 500);
     this.userService.getUsers()
       .subscribe((users: any) => this.user = users.nick);

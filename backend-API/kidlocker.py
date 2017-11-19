@@ -2,8 +2,14 @@ from flask import Flask, jsonify
 from flask import abort
 from flask import request
 from send_sms import send_sms
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
+
+polskie = "ąęćłńśóżź"
+ang = "aeclnsozz"
+tran = str.maketrans(polskie, ang)
 
 
 @app.route('/sendsms', methods=['POST'])
@@ -24,9 +30,8 @@ def process_sms_request():
 
     print("Wysyłam sms o treści {} \n na numer {}".format(text, phone_num))
 
-    res = send_sms(phone_num, text)
+    res = send_sms(phone_num, text.translate(tran))
     print(res)
-    # return jsonify({'code': code}), 201
     return jsonify({'Response': dict(res)}), 201
 
 

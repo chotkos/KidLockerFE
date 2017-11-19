@@ -36,12 +36,12 @@ export class MockData{
     ];
 
     groupImageUrl: Array<string> = [
-      "alan.png",
-      "alan.png",
-      "alan.png",
-      "alan.png",
-      "alan.png",
-      "alan.png"
+      "006-animal.png",
+      "004-animal-1.png",
+      "003-animal-2.png",
+      "001-animals.png",
+      "005-people.png",
+      "002-mouse.png"
     ];
 
 

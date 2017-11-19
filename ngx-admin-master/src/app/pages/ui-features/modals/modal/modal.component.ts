@@ -20,7 +20,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 export class ModalComponent {
 
   modalHeader: string;
-  modalContent = `Wydaj dziecko tylko osobie, która jest w stanie powtórzyć ten kod.`;
+  modalContent = `Wydaj dziecko tylko osobie, która jest w stanie podać ten kod. Nie zdradzaj go nikomu.s`;
 
   constructor(private activeModal: NgbActiveModal) { }
 

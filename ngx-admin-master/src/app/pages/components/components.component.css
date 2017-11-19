@@ -1,0 +1,70 @@
+.nb-card-body {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.kid-photo {
+    min-height: 250px;
+    max-height: 250px;
+    min-width: 250px;
+    max-width: 250px;
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 2px #c4cad2 solid;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.nb-card-body > .details > .title {
+    margin: 10px;
+    font-weight: bold;
+    font-size: 32px;
+}
+.nb-card-footer {
+    text-align: center;
+    font-style: italic;
+    color: #a0a1a2;
+}
+.tab-title > ul > li.active > a {
+    font-size: 20px;
+}
+.parent-contact, .keeper-contact {
+    margin: 20px;
+}
+.between-line {
+    border-top: 3px double;
+    padding-top: 10px;
+    border-color: #40dc7e;
+}
+.nb-user {
+    display: inline-block;
+}
+.contact-details {
+    float: right;
+    margin: 10px;
+}
+.icon-class {
+    font-size: 28px;
+    color: #40dc7e;
+    font-weight: bold;
+    top: 8px;
+    position: relative;
+}
+.phone-number {
+    margin-right: 20px;
+    font-weight: bold;
+}
+.icon-mail {
+    font-size: 26px;
+    color: #ffffff;
+    font-weight: bold;
+    top: -1px;
+    position: relative;
+    vertical-align: middle;
+}
+
+
+.nb-tabset>ul>li>a{
+    font-size: 20px!important;
+}

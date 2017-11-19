@@ -4,10 +4,10 @@
     margin-right: auto;
 }
 .kid-photo {
-    min-height: 250px;
-    max-height: 250px;
-    min-width: 250px;
-    max-width: 250px;
+    min-height: 230px;
+    max-height: 230px;
+    min-width: 230px;
+    max-width: 230px;
     display: block;
     background-size: contain;
     background-repeat: no-repeat;
@@ -39,10 +39,7 @@
 }
 .nb-user {
     display: inline-block;
-}
-.contact-details {
-    float: right;
-    margin: 10px;
+    padding-left: 0;
 }
 .icon-class {
     font-size: 28px;
@@ -63,8 +60,12 @@
     position: relative;
     vertical-align: middle;
 }
-
-
+.button-send {
+    float: right;
+}
 .nb-tabset>ul>li>a{
     font-size: 20px!important;
+}
+.contact-details {
+    text-align: center;
 }

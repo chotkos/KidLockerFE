@@ -36,7 +36,7 @@
             <nb-tabset fullWidth class="nb-tabset">
                     <nb-tab tabTitle="Opiekunowie" class="tab-title">
                     <div class="contact keeper-contact" *ngFor="let c of kid.keepers">
-                        <nb-user class="nb-user" [name]="c.name+' '+c.lastname" [picture]="c.photoUrl" size="large"></nb-user>
+                        <nb-user class="nb-user" [name]="c.name+' '+c.lastname" [picture]="'assets/images/'+c.photoUrl" size="large"></nb-user>
                         <div class="contact-details">
                             <i class="i-contact nb-phone icon-class"></i>
                             <span class="phone-number">{{c.phoneNumber}}</span>

@@ -84,7 +84,7 @@ export class SmartTableComponent implements OnInit {
   }
 
   onDeleteConfirm(event): void {
-    if (window.confirm('Are you sure you want to delete?')) {
+    if (window.confirm('Czy jesteś pewny że chcesz usunąć ten rekord?')) {
       event.confirm.resolve();
     } else {
       event.confirm.reject();

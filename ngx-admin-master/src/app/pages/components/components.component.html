@@ -18,32 +18,19 @@
     <div class="col-xxxl-7 col-xxl-8 col-lg-8 col-md-6">
         <nb-card [size]="xlarge">
             <nb-tabset fullWidth class="nb-tabset">
-                <nb-tab tabTitle="Rodzice" class="tab-title">
+                <nb-tab tabTitle="Opiekunowie" class="tab-title">
                     <div class="contact parent-contact" *ngFor="let c of kid.parents">
                         <nb-user class="nb-user" [name]="c.name+' '+c.lastname" [picture]="'assets/images/'+c.photoUrl" size="large"></nb-user>
                         <div class="contact-details">
-                            <i class="i-contact nb-phone icon-class"></i>
-                            <span class="phone-number">{{c.phoneNumber}}</span>
-                            <button class="btn btn-hero-success" (click)="sendSms(c.phoneNumber, c.name+' '+c.lastname)">
-                                <i class="nb-email icon-mail"></i>
-                                Wyślij SMS
-                            </button>
+                            <i class="i-contact nb-phone">{{c.phoneNumber}}</i>
+                            <button (click)="sendSms(c.phoneNumber, c.name+''+c.lastname)">Wyślij SMS</button>
                         </div>
                     </div>
-                </nb-tab>
-            </nb-tabset>
-            
-            <nb-tabset fullWidth class="nb-tabset">
-                    <nb-tab tabTitle="Opiekunowie" class="tab-title">
                     <div class="contact keeper-contact" *ngFor="let c of kid.keepers">
-                        <nb-user class="nb-user" [name]="c.name+' '+c.lastname" [picture]="'assets/images/'+c.photoUrl" size="large"></nb-user>
-                        <div class="contact-details">
-                            <i class="i-contact nb-phone icon-class"></i>
-                            <span class="phone-number">{{c.phoneNumber}}</span>
-                            <button class="btn btn-hero-success" (click)="sendSms(c.phoneNumber, c.name+' '+c.lastname)">
-                                    <i class="nb-email icon-mail"></i>
-                                    Wyślij SMS
-                            </button>
+                        <nb-user [name]="c.name+' '+c.lastname" [picture]="c.photoUrl" size="large"></nb-user>
+                        <div>
+                            <i class="i-contact nb-phone">{{c.phoneNumber}}</i>
+                            <button (click)="sendSms(c.phoneNumber, c.name+' '+c.lastname)">Wyślij SMS</button>
                         </div>
                     </div>
                 </nb-tab>

@@ -3,7 +3,8 @@
 
     <div class="row">
 
-        <nb-card class="col-md-4" [size]="large" *ngFor="let group of groupsObject">
+      <nb-card class="col-md-4" [size]="large" *ngFor="let group of groupsObject">
+        <a href="#/pages/group/{{group.groupName}}">
           <nb-card-body class="nb-card-body">
             <div class="picture kid-photo" [style.backgroundImage]="group.photoUrl"></div>
             <div class="details">
@@ -12,7 +13,8 @@
               </div>
             </div>
           </nb-card-body>
-        </nb-card>
+        </a>
+      </nb-card>
 
     </div>
   </div>

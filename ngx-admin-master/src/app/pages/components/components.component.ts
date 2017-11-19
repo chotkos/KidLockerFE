@@ -8,6 +8,7 @@ import { Adult } from '../../model/Kid';
 
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './../ui-features/modals/modal/modal.component';
+//import { setTimeout } from 'timers';
 
 @Component({
   selector: 'ngx-components',
@@ -30,8 +31,9 @@ export class ComponentsComponent implements OnInit {
       this.kid = this.mock.kidsMock.filter(kid => kid.id + '' === params['id'])[0];
 
       this.kid.photoUrl = 'url(' + 'assets/images/' + this.kid.photoUrl + ')';
-
-
+      setTimeout(function(){
+        $('.nb-tabset>ul>li>a').css('font-size','20px');
+      },500);
       console.log(this.kid);
     });
   }

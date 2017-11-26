@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ComponentsComponent } from './components.component';
 import { TreeComponent } from './tree/tree.component';
 import { NotificationsComponent } from './notifications/notifications.component';
+import { KidsViewComponent } from '../content/kids/kids-view/kids-view.component';
 
 const routes: Routes = [{
   path: 'tree',
@@ -29,4 +30,5 @@ export const routedComponents = [
   ComponentsComponent,
   TreeComponent,
   NotificationsComponent,
+  KidsViewComponent
 ];

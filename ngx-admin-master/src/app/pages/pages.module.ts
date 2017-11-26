@@ -7,9 +7,10 @@ import { ThemeModule } from '../@theme/theme.module';
 import { TablesModule } from './tables/tables.module';
 import { TreeModule } from 'ng2-tree/src/tree.module';
 import { ComponentsModule } from './components/components.module';
+import { KidsListComponent } from './content/kids/kids-list/kids-list.component';
 
 const PAGES_COMPONENTS = [
-  PagesComponent,
+  PagesComponent
 ];
 
 @NgModule({
@@ -21,7 +22,7 @@ const PAGES_COMPONENTS = [
     ComponentsModule
   ],
   declarations: [
-    ...PAGES_COMPONENTS,
+    ...PAGES_COMPONENTS, 
   ],
 })
 export class PagesModule {

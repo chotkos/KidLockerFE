@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col-xxxl-5 col-xxl-4 col-lg-4 col-md-5">
+        <nb-card [size]="large">
+            <nb-card-body class="nb-card-body">
+                <div class="picture kid-photo" [style.backgroundImage]="kid.photoUrl"></div>
+
+                <div class="details">
+                    <div class="title">
+                        {{kid.name}} {{kid.lastname}}
+                    </div>
+                </div>
+            </nb-card-body>
+            <nb-card-footer class="nb-card-footer">
+                {{kid.groupName}}
+            </nb-card-footer>
+        </nb-card>
+    </div>
+    <div class="col-xxxl-7 col-xxl-8 col-lg-8 col-md-7">
+        <nb-card [size]="xlarge">
+            <nb-tabset fullWidth class="nb-tabset"> 
+                <nb-tab tabTitle="Rodzice" class="tab-title">
+                    <div class="contact parent-contact row" *ngFor="let c of kid.parents">
+                        <nb-user class="nb-user col-lg-3 col-md-12 col-sm-12" [name]="c.name+' '+c.lastname" [picture]="'assets/images/'+c.photoUrl"
+                            size="large"></nb-user>
+                        <div class="contact-details col-lg-5 col-md-6 col-sm-6">
+                            <i class="i-contact nb-phone icon-class"></i>
+                            <span class="phone-number">{{c.phoneNumber}}</span>
+                        </div>
+                        <button class="button-send btn btn-hero-success col-lg-4 col-md-6 col-sm-6" (click)="sendSms(c.phoneNumber, c.name+' '+c.lastname)">
+                            <i class="nb-email icon-mail"></i>
+                            Wyślij SMS
+                        </button>
+                        <hr/>
+                    </div>
+                </nb-tab>
+            </nb-tabset>
+
+            <nb-tabset fullWidth class="nb-tabset">
+                <nb-tab tabTitle="Opiekunowie" class="tab-title">
+                    <div class="contact keeper-contact row" *ngFor="let c of kid.keepers">
+                        <nb-user class="nb-user col-lg-3 col-md-12 col-sm-12" [name]="c.name+' '+c.lastname" [picture]="'assets/images/'+c.photoUrl" size="large"></nb-user>
+                        <div class="contact-details col-lg-5 col-md-6 col-sm-6">
+                            <i class="i-contact nb-phone icon-class"></i>
+                            <span class="phone-number">{{c.phoneNumber}}</span>
+                        </div>
+                        <button class="btn btn-hero-success col-lg-4 col-md-6 col-sm-6" (click)="sendSms(c.phoneNumber, c.name+' '+c.lastname)">
+                            <i class="nb-email icon-mail"></i>
+                            Wyślij SMS
+                        </button>
+                        <hr/>
+                    </div>
+                </nb-tab>
+            </nb-tabset>
+        </nb-card>
+    </div>
+
+</div>

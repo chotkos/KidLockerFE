@@ -6,6 +6,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {SmartTableComponent} from './tables/smart-table/smart-table.component';
 import { TreeComponent } from 'ng2-tree/src/tree.component';
 import { ComponentsComponent } from './components/components.component';
+import { KidsListComponent } from './content/kids/kids-list/kids-list.component';
+import { KidsViewComponent } from './content/kids/kids-view/kids-view.component';
 
 const routes: Routes = [{
   path: '',
@@ -39,10 +41,10 @@ const routes: Routes = [{
     redirectTo: 'dashboard',
     pathMatch: 'full',
   },
-  { path: 'group', component: SmartTableComponent },
-  { path: 'group/:name', component: SmartTableComponent },
-  { path: 'group/search/:searchstring', component: SmartTableComponent },
-  { path: 'kid/:id', component: ComponentsComponent}
+  /*{ path: 'group', component: SmartTableComponent },*/
+  { path: 'group/:name', component: KidsListComponent },
+  { path: 'kid/search/:searchstring', component: KidsListComponent },
+  { path: 'kid/:id', component: KidsViewComponent}
 ],
 }];
 

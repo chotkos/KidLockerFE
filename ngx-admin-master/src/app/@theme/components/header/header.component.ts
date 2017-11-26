@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit {
             ) {
               this.searchService.onSearchSubmit().subscribe(function(e){ 
                 //this.router.navigate(['/pages/search'], { queryParams: { searchstring: e.term } });
-                window.location.href = '/#/pages/group/search/'+e.term;
+                window.location.href = '/#/pages/kid/search/'+e.term;
               });
             
   }
